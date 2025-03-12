@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/a1exspb/sdvps-materials.git'
+                git 'https://github.com/a1ex93/test.git'
             }
         }
         stage('Build') {
