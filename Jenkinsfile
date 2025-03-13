@@ -25,9 +25,8 @@ pipeline {
                     def filePath = "myapp"
                     def artifactPath = "com/example/myapp/${BUILD_NUMBER}/myapp"
 
-                    withCredentials([usernamePassword(credentialsId: 'nexus-credentials', usernameVariable: 'admin', passwordVariable: 'admin')]) {
                         sh """
-                            curl -u ${NEXUS_USER}:${NEXUS_PASSWORD} --upload-file ${filePath} \
+                            curl -u admin:admin --upload-file ${filePath} \
                             "${serverUrl}/repository/${repositoryName}/${artifactPath}"
                         """
                     }
